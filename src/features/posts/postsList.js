@@ -7,9 +7,9 @@ import ReactionButtons from "./ReactionButtons";
 const PostsList = () => {
     const posts = useSelector(selectAllPosts);
 
-    // const orderedPosts = posts.slice().sort((a, b) => b.date.localeCompare(a.date));
+    const orderedPosts = posts.slice().sort((a, b) => b.date.localeCompare(a.date));
 
-    const renderPosts = posts.map((post, i) => {
+    const renderPosts = orderedPosts.map((post, i) => {
         return (
             <article key={i}>
                 <h3>{post.title}</h3>
